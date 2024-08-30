@@ -10,10 +10,15 @@ type Props = {
 
 const Post = ({ children, imageUrl }: Props) => (
     <div className={styles.post}>
-        <img className={styles['post-image']} src={imageUrl} />
-        <p className={styles['post-text']}> {children} </p>
+      <img className={styles['post-image']} src={imageUrl} />
+      <p className={styles['post-text']}> {children} </p>
+    
+      <div data-testid="Olha só que legal minha miniatura do Batmóvel">
         <PostComments />
+      </div>
     </div>
 );
 
-export default Post;
+    export default Post;
+
+
