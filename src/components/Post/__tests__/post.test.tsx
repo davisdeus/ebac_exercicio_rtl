@@ -12,9 +12,10 @@ describe('Teste do componente Post', () => {
     );
     
     // Verifica se a imagem está presente
-    const imagem = screen.getByRole('img');
+    const imagem = screen.getByAltText("Olha só que legal minha miniatura do Batmóvel.")
     expect(imagem).toHaveAttribute('src',
-    'https://www.orangeboxminiaturas.com.br/img/products/batmovel-1989-figura-batman-em-metal-jada-toys-1-24-jad-98260_1_1000.jpg');
+      'https://www.orangeboxminiaturas.com.br/img/products/batmovel-1989-figura-batman-em-metal-jada-toys-1-24-jad-98260_1_1000.jpg');
+    expect(imagem).toBeInTheDocument()
   
      // Verifica se o texto está presente
     const texto = screen.getByAltText('Olha só que legal minha miniatura do Batmóvel.');
@@ -22,7 +23,7 @@ describe('Teste do componente Post', () => {
   
 
     // Verifica se o elemento com data-testid está presente
-    const dataTestId = screen.getByTestId('Olha só que legal minha miniatura do Batmóvel.');
+    const dataTestId = screen.getByTestId('post-do-comentario');
     expect(dataTestId).toBeInTheDocument();
 })
 })
